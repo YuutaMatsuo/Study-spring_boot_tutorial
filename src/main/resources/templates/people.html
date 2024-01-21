@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>人物情報記録</title>
+</head>
+
+<body>
+	<h1>人物情報記録</h1>
+	<form action="/personapp" method="post">
+		ID : <input type="text" name="id"><br>
+		名前 : <input type="text" name="name"><br>
+		年齢 : <input type="text" name="age"><br>
+		<input type="submit" value="送信">
+	</form>
+
+	<table border="1">
+		<tr>
+			<th>人物コード</th>
+			<th>名前</th>
+			<th>年齢</th>
+		</tr>
+		<tr th:each="person : ${plist}">
+			<td>[[${person.id}]]</td>
+			<td>[[${person.name}]]</td>
+			<td>[[${person.age}]]</td>
+		</tr>
+	</table>
+
+</body>
+
+</html>
